@@ -13,4 +13,13 @@ class M_welcome extends CI_Model {
     $this->db->insert('post', $data);
   }
 
+  //1.buat function read
+  public function read($id = FALSE) {
+    if ($id === FALSE) {
+      return $this->db->get('post')->result_array();
+    }else{
+      $query = $this->db->get_where('post', ['id' => $id]);
+      return $query->row();
+    }
+  }
 }

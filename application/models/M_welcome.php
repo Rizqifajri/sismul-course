@@ -22,4 +22,14 @@ class M_welcome extends CI_Model {
       return $query->row();
     }
   }
+
+  //1. buat function update
+  public function update($id) {
+    $data = [
+      'name' => $this->input->post('name', TRUE),
+      'description' => $this->input->post('description', TRUE),
+    ];
+    $this->db->where('id', $id);
+    $this->db->update('post', $data);
+  }
 }

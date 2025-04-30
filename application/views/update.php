@@ -20,7 +20,7 @@
       <div class="file-field input-field col s12">
         <div class="btn light-blue darken-4">
           <span>Image</span>
-          <input name="image" type="file" id="file">
+          <input name="image1" type="file" id="file">
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" onchange="thumbnail();" name="file">

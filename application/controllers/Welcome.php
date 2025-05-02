@@ -64,7 +64,6 @@ class Welcome extends CI_Controller {
 		
 	}
 
-	//2. buat function update
 	public function update($id) 
 	{
  		$this->load->helper('form');
@@ -108,5 +107,12 @@ class Welcome extends CI_Controller {
 			};
 		}
 		
+	}
+
+	//buat function delete
+	public function delete($id) 
+	{
+		$this->model->delete($id);
+		redirect();
 	}
 }

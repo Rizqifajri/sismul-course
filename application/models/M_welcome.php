@@ -23,7 +23,6 @@ class M_welcome extends CI_Model {
     }
   }
 
-  //1. buat function update
   public function update($id) {
     $data = [
       'name' => $this->input->post('name', TRUE),
@@ -31,5 +30,11 @@ class M_welcome extends CI_Model {
     ];
     $this->db->where('id', $id);
     $this->db->update('post', $data);
+  }
+
+  //buat function delete
+  public function delete($id) {
+    $this->db->where('id', $id);
+    $this->db->delete('post');
   }
 }

@@ -16,7 +16,7 @@ class M_welcome extends CI_Model {
   //1.buat function read
   public function read($id = FALSE) {
     if ($id === FALSE) {
-      return $this->db->get('post')->result_array();
+      return $this->db->get('post')->result();
     }else{
       $query = $this->db->get_where('post', ['id' => $id]);
       return $query->row();
@@ -31,5 +31,11 @@ class M_welcome extends CI_Model {
     ];
     $this->db->where('id', $id);
     $this->db->update('post', $data);
+  }
+
+  //buat function delete
+  public function delete($id){
+    $this->db->where('id', $id);
+    $this->db->delete('post');
   }
 }
